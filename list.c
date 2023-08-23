@@ -42,7 +42,7 @@ void * firstList(List * list)
 {
   List * actual = (List *) malloc(sizeof(List));
   actual -> head = list -> head;
-  return NULL;
+  return actual;
 }
 
 void * nextList(List * list) {
