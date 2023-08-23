@@ -38,8 +38,11 @@ List * createList()
   return lista;
 }
 
-void * firstList(List * list) {
-    return NULL;
+void * firstList(List * list)
+{
+  List * actual = (List *) malloc(sizeof(List));
+  actual -> head = list -> head;
+  return NULL;
 }
 
 void * nextList(List * list) {
