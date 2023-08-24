@@ -80,7 +80,7 @@ void * prevList(List * movie)
 void pushFront(List * movie, void * data) 
 {
   Node * local = createNode(data);
-  if(movie == NULL && movie->head == NULL){
+  if(movie->head == NULL){
     movie->head = local;
     movie->tail = local;
     movie->current = local;
