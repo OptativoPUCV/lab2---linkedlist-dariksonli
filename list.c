@@ -77,7 +77,20 @@ void * prevList(List * movie)
   
 }
 
-void pushFront(List * list, void * data) {
+void pushFront(List * movie, void * data) 
+{
+  Node * local = createNode(data);
+  if(movie == NULL && movie->head == NULL){
+    movie->head = local;
+    movie->tail = local;
+    movie->current = local;
+    return ;
+  }else{
+    local -> next = movie -> head; //puntero a otro puntero es el cabeza anterior
+    movie -> head -> prev = local;
+    movie ->head = local;
+  }
+  
 }
 
 void pushBack(List * list, void * data) {
