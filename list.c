@@ -71,8 +71,10 @@ void * prevList(List * movie)
   {
     movie -> current = movie -> current -> prev;
     return movie-> current->data;
+  }else{
+    return NULL;
   }
-  return NULL;
+  
 }
 
 void pushFront(List * list, void * data) {
