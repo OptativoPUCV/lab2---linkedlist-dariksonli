@@ -41,7 +41,9 @@ List * createList()
 void * firstList(List * list)
 {
   list->current = list->head;
-  return list->head->data;
+  Node *primer = (Node *) malloc(sizeof(Node));
+  primer -> data = list->head;
+  return primer;
 }
 
 void * nextList(List * list) {
