@@ -40,9 +40,7 @@ List * createList()
 
 void * firstList(List * list)
 {
-  List * actual = (List *) malloc(sizeof(List));
-  actual -> head = list -> head;
-  return (actual -> head);
+  return (list -> head);
 }
 
 void * nextList(List * list) {
