@@ -41,15 +41,17 @@ List * createList()
 void * firstList(List * movie)
 {
   if(movie->head == NULL) return NULL;
+  movie -> current = movie -> head;
   return movie -> head -> data;
 }
 
 void * nextList(List * list) {
-    list->current = list->current->next;
-    if (list->current != NULL) {
-        return list->current->data;
+    if (list != NULL && list->current != NULL && list->current-> next != NULL) 
+    {
+      list->current = list->current->next;
+      return list->current->data;
     } else {
-        return NULL;
+      return NULL;
     }
 }
 
