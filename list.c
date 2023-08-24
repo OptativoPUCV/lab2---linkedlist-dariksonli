@@ -45,7 +45,8 @@ void * firstList(List * movie)
   return movie -> head -> data;
 }
 
-void * nextList(List * list) {
+void * nextList(List * list) 
+{
     if (list != NULL && list->current != NULL && list->current-> next != NULL) 
     {
       list->current = list->current->next;
@@ -55,8 +56,13 @@ void * nextList(List * list) {
     }
 }
 
-void * lastList(List * list) {
-    return NULL;
+void * lastList(List * movie) {
+  if(movie != NULL)
+  {
+    movie -> current = movie -> tail;
+    return movie->tail->data;
+  }
+  return NULL;
 }
 
 void * prevList(List * list) {
