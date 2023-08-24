@@ -38,12 +38,9 @@ List * createList()
   return lista;
 }
 
-void * firstList(List * list)
+void * firstList(List * movie)
 {
-  list->current = list->head;
-  Node *primer = (Node *) malloc(sizeof(Node));
-  primer -> data = list->head;
-  return primer -> data;
+  return movie -> head -> data;
 }
 
 void * nextList(List * list) {
