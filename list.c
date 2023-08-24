@@ -57,7 +57,7 @@ void * nextList(List * list)
 }
 
 void * lastList(List * movie) {
-  if(movie != NULL)
+  if(movie != NULL && movie->tail != NULL)
   {
     movie -> current = movie -> tail;
     return movie->tail->data;
@@ -67,7 +67,7 @@ void * lastList(List * movie) {
 
 void * prevList(List * movie) 
 {
-  if(movie != NULL && movie -> current -> prev != NULL)
+  if(movie != NULL && movie -> current != NULL && movie -> current -> prev != NULL)
   {
     movie -> current = movie -> current -> prev;
     return movie-> current->data;
