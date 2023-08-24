@@ -40,6 +40,7 @@ List * createList()
 
 void * firstList(List * movie)
 {
+  if(movie->head == NULL) return NULL;
   return movie -> head -> data;
 }
 
