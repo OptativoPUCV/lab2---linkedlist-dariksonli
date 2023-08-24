@@ -43,7 +43,7 @@ void * firstList(List * list)
   list->current = list->head;
   Node *primer = (Node *) malloc(sizeof(Node));
   primer -> data = list->head;
-  return primer;
+  return primer -> data;
 }
 
 void * nextList(List * list) {
