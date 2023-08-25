@@ -110,8 +110,7 @@ void pushCurrent(List * movie, void * data)
   aux->prev = movie->head;
   
   aux->next = movie->current->next;
-  movie->current->next = aux;
-  movie->current->prev = movie->tail->prev;
+  movie->tail->prev = aux;
 }
 
 void * popFront(List * list) {
