@@ -125,6 +125,9 @@ void * popBack(List * list) {
 
 void * popCurrent(List * list)
 {
+  if (list == NULL || list->current == NULL) {
+        return NULL;  // Lista vacía o current no válido
+    }
   Node* aux = createNode(list->head); 
   while(aux->next != list->current && aux->next != NULL) 
     aux = aux->next; 
