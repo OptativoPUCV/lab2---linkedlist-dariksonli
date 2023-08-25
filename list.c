@@ -100,6 +100,17 @@ void pushBack(List * list, void * data) {
 
 void pushCurrent(List * movie, void * data) 
 {
+  /*Node * local = createNode(data);
+  if(movie->head == NULL){
+    movie->head = local;
+    movie->tail = local;
+    movie->current = local;
+    return ;
+  }else{
+    local -> next = movie -> head; //puntero a otro puntero es el cabeza anterior
+    movie -> head -> prev = local;
+    movie ->head = local;
+    }*/
   Node *aux = createNode(data);
     if (aux == NULL) {
         return; // Error al asignar memoria
@@ -108,9 +119,10 @@ void pushCurrent(List * movie, void * data)
   /*aux->data = data;
   aux->prev = NULL;
   aux->next = movie->head;*/
-  
-  aux->next = movie->current->next;
+  aux->next = movie -> head;
+  //aux->next = movie->current->next;
   movie->tail->prev = aux;
+  movie -> head = aux;
 }
 
 void * popFront(List * list) {
