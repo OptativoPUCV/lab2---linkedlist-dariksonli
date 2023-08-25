@@ -100,7 +100,7 @@ void pushBack(List * list, void * data) {
 
 void pushCurrent(List * movie, void * data) 
 {
-  Node *aux = (Node *)malloc(sizeof(Node));
+  Node *aux = createNode(data);
     if (aux == NULL) {
         return; // Error al asignar memoria
     }
