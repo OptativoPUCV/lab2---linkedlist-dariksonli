@@ -100,7 +100,7 @@ void pushBack(List * list, void * data) {
 
 void pushCurrent(List * movie, void * data) 
 {
-  movie->current->next->data  = data;
+  movie->current->next  = data;
   movie->tail = NULL;
 }
 
