@@ -105,9 +105,9 @@ void pushCurrent(List * movie, void * data)
         return; // Error al asignar memoria
     }
 
-  aux->data = data;
+  /*aux->data = data;
   aux->prev = NULL;
-  aux->next = movie->head;
+  aux->next = movie->head;*/
   
   aux->next = movie->current->next;
   movie->tail->prev = aux;
