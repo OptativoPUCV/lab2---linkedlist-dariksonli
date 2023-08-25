@@ -106,8 +106,8 @@ void pushCurrent(List * movie, void * data)
     }
 
   aux->data = data;
-  aux->next = NULL;
-  aux->prev = movie->head;
+  aux->prev = NULL;
+  aux->next = movie->head;
   
   aux->next = movie->current->next;
   movie->tail->prev = aux;
