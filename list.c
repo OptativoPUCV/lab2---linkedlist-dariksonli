@@ -107,6 +107,7 @@ void pushCurrent(List * movie, void * data)
 
   newNode->data = data;
   newNode->next = NULL;
+  newNode->prev = movie->head;
   
   newNode->next = movie->current->next;
   movie->current->next = newNode;
