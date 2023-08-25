@@ -133,6 +133,7 @@ void * popCurrent(List * list)
   while(aux->next != list->current && aux->next != NULL) 
     aux = aux->next; 
 
+  void * dato = list->current->data;
   aux->next = list->current->next;
   list -> current -> prev = aux;
   aux->data = list->current->data; //el nodo aux guarda en la data el valor de la data de la lista en la pos current
@@ -140,7 +141,7 @@ void * popCurrent(List * list)
   list-> current = aux -> next;
   free(list->current); 
   
-  return aux->data ;
+  return dato ;
 }
 
 void cleanList(List * list) {
