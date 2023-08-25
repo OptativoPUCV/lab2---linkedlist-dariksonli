@@ -125,8 +125,9 @@ void * popBack(List * list) {
 
 void * popCurrent(List * list)
 {
-  Node* aux = list->head; 
-  while(aux->next!= list->current && aux->next != NULL && list != NULL) 
+  
+  Node* aux = createNode(list->head); 
+  while(aux->next != list->current && aux->next != NULL) 
     aux = aux->next; 
   aux->data = list->current->data;
   aux->next = list->current->next;
