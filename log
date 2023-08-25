@@ -348,3 +348,24 @@ Fri 25 Aug 2023 08:50:10 PM UTC:
  tests:  10|2
 total_score: 45/70
 9fa4bba
+Fri 25 Aug 2023 08:53:23 PM UTC: 
+ list.c | 5 +++++
+ 1 file changed, 5 insertions(+)
+In file included from test.c:5:
+list.c: In function ‘popCurrent’:
+list.c:135:3: error: this ‘while’ clause does not guard... [-Werror=misleading-indentation]
+  135 |   while(aux->next != list->current && aux->next != NULL)
+      |   ^~~~~
+list.c:137:5: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the ‘while’
+  137 |     aux->next = list->current->next;
+      |     ^~~
+list.c:143:20: error: ‘aux’ undeclared (first use in this function)
+  143 |   list-> current = aux -> next;
+      |                    ^~~
+list.c:143:20: note: each undeclared identifier is reported only once for each function it appears in
+list.c:147:1: error: control reaches end of non-void function [-Werror=return-type]
+  147 | }
+      | ^
+cc1: all warnings being treated as errors
+Compilation failed
+3301341
