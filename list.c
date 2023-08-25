@@ -100,17 +100,17 @@ void pushBack(List * list, void * data) {
 
 void pushCurrent(List * movie, void * data) 
 {
-  Node *newNode = (Node *)malloc(sizeof(Node));
-    if (newNode == NULL) {
+  Node *aux = (Node *)malloc(sizeof(Node));
+    if (aux == NULL) {
         return; // Error al asignar memoria
     }
 
-  newNode->data = data;
-  newNode->next = NULL;
-  newNode->prev = movie->head;
+  aux->data = data;
+  aux->next = NULL;
+  aux->prev = movie->head;
   
-  newNode->next = movie->current->next;
-  movie->current->next = newNode;
+  aux->next = movie->current->next;
+  movie->current->next = aux;
 }
 
 void * popFront(List * list) {
