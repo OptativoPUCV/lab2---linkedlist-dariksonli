@@ -131,7 +131,6 @@ void * popCurrent(List * list)
   Node* aux = createNode(list->head->data); 
   if(list->head == list->current)
   {
-    aux->data = list->head->data;
     list->head = list->current->next;
     list->current = list->current->next;
   }else{
@@ -139,8 +138,9 @@ void * popCurrent(List * list)
     while(aux->next != list->current && aux->next != NULL) 
       aux = aux->next; 
   }
+  free(list->current);
   
-  return NULL;
+  return aux->data;
 }
 
 void cleanList(List * list) {
