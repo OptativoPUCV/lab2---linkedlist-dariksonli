@@ -458,3 +458,25 @@ list.c:131:1: error: control reaches end of non-void function [-Werror=return-ty
 cc1: all warnings being treated as errors
 Compilation failed
 660a672
+Sat 26 Aug 2023 01:57:49 AM UTC: 
+ list.c | 4 +---
+ 1 file changed, 1 insertion(+), 3 deletions(-)
+test.c: In function ‘popCurrent’:
+test.c:448:5: error: ‘main’ is normally a non-static function [-Werror=main]
+  448 | int main( int argc, char *argv[] ) {
+      |     ^~~~
+test.c:468:1: error: expected declaration or statement at end of input
+  468 | }
+      | ^
+test.c:469: error: control reaches end of non-void function [-Werror=return-type]
+At top level:
+test.c:448:5: error: ‘main’ defined but not used [-Werror=unused-function]
+  448 | int main( int argc, char *argv[] ) {
+      |     ^~~~
+In file included from test.c:5:
+list.c:131:6: error: ‘cleanList’ defined but not used [-Werror=unused-function]
+  131 | void cleanList(List * list) {
+      |      ^~~~~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+bd3a935
