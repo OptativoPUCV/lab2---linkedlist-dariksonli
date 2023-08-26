@@ -86,7 +86,7 @@ void pushFront(List * movie, void * data)
     movie->current = local;
     return ;
   }else{
-    local -> next = movie -> head; //puntero a otro puntero es el cabeza anterior
+    local -> next = movie -> head; 
     movie -> head -> prev = local;
     movie ->head = local;
   }
@@ -102,7 +102,7 @@ void pushCurrent(List * movie, void * data)
 {
   Node *aux = createNode(data);
     if (aux == NULL) {
-        return; // Error al asignar memoria
+        return; 
     }
   movie->tail = aux;
   movie->current->next = aux;
@@ -119,9 +119,6 @@ void * popBack(List * list) {
     list->current = list->tail;
     return popCurrent(list);
 }
-
-/*Programe la función `void* popCurrent(List * list)`, la cual elimina el nodo que está en la posición del current de la lista enlazada, y además retorna el **dato** del nodo eliminado.
-> **Nota**: El current debe quedar apuntando al nodo siguiente del eliminado.*/
 
 void * popCurrent(List * list)
 {
