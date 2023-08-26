@@ -125,7 +125,28 @@ void * popBack(List * list) {
 
 void * popCurrent(List * list)
 {
-  if (list == NULL || list->current == NULL){ return NULL; 
+  if(list == NULL || list -> current == NULL)
+      return NULL;
+
+  
+  Node* aux = createNode(list->head->data); 
+  if(list->head == list->current)
+  {
+    list->current = list->head;
+    list->current->next = 
+  }
+  while(aux->next != list->current && aux->next != NULL) 
+    aux = aux->next; 
+
+  void * dato = list->current->data;
+  aux->next = list->current->next;
+  list -> current -> prev = aux;
+  aux->data = list->current->data; //el nodo aux guarda en la data el valor de la data de la lista en la pos current
+  
+  list-> current = aux -> next;
+  free(list->current); 
+  
+  return dato ;
 }
 
 void cleanList(List * list) {

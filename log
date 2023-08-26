@@ -480,3 +480,13 @@ list.c:131:6: error: ‘cleanList’ defined but not used [-Werror=unused-functi
 cc1: all warnings being treated as errors
 Compilation failed
 bd3a935
+Sat 26 Aug 2023 01:59:05 AM UTC: 
+ list.c | 23 ++++++++++++++++++++++-
+ 1 file changed, 22 insertions(+), 1 deletion(-)
+In file included from test.c:5:
+list.c: In function ‘popCurrent’:
+list.c:137:3: error: expected expression before ‘}’ token
+  137 |   }
+      |   ^
+Compilation failed
+0b862ef
