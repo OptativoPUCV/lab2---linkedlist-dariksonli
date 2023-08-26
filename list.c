@@ -128,7 +128,7 @@ void * popCurrent(List * list)
   if(list == NULL || list -> current == NULL)
       return NULL;
   
-  Node* aux = createNode(list->current); 
+  Node* aux = createNode(list->current->data); 
   if(list->head == list->current)
   {
     list->head = list->current->next;
