@@ -138,6 +138,7 @@ void * popCurrent(List * list)
     while(aux->next != list->current && aux->next != NULL) 
       aux = aux->next; 
   }
+  list->current = list->current-> next;
   free(list->current);
   
   return aux->data;
