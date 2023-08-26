@@ -129,7 +129,6 @@ void * popCurrent(List * list)
       return NULL;
   
   Node *aux = list->current;
-  void *data = aux->data;
   
   if(list->head == aux)
   {
@@ -142,7 +141,7 @@ void * popCurrent(List * list)
   list->current = list->current-> next;
   free(list->current);
   
-  return data;
+  return aux->data;
 }
 
 void cleanList(List * list) {
