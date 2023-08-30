@@ -122,6 +122,8 @@ void * popBack(List * list) {
 
 void * popCurrent(List * list)
 {
+  assert(list!=NULL || list->head != NULL);
+  
   if(list == NULL || list -> current == NULL)
       return NULL;
   
